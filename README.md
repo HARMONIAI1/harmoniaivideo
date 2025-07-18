@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html>
 <head>
   <meta charset="UTF-8">
-  <title>Déposer votre vidéo</title>
+  <title>Uploader une vidéo</title>
   <script>
     UPLOADCARE_PUBLIC_KEY = 'f44deb9e0290fb01757b';
   </script>
@@ -19,12 +19,12 @@
     data-max-size="157286400"
   />
 
-  <p>Copiez le lien généré ci-dessous et collez-le dans le formulaire Google Forms :</p>
-  <input type="text" id="videoLink" style="width: 90%; font-size: 16px;" readonly />
+  <p>Lien de votre vidéo :</p>
+  <input type="text" id="videoLink" style="width: 90%;" readonly />
 
   <script>
-    uploadcare.Widget('[role=uploadcare-uploader]').onUploadComplete(function(fileInfo) {
-      document.getElementById('videoLink').value = fileInfo.cdnUrl;
+    uploadcare.Widget('[role=uploadcare-uploader]').onUploadComplete(function(info) {
+      document.getElementById('videoLink').value = info.cdnUrl;
     });
   </script>
 </body>
